@@ -1,4 +1,5 @@
 # Terraform Templates
+
 This repository will be used as base to start a new terraform project or even used as action to be invoked by a GitHub Action from any other repo
 
 ## Repo Folder Structure
@@ -31,4 +32,10 @@ This repository will be used as base to start a new terraform project or even us
 ## [Workflows](workflows)
 
 Set or GitHub Actions Workflows to be used when handling with Terraform deployment
+
 ### [Audit](.github/workflows/audit.yml)
+
+### Documentation
+
+- https://learn.microsoft.com/en-us/azure/azure-functions/functions-reference-node?tabs=typescript%2Clinux%2Cazure-cli&pivots=nodejs-model-v4
+- https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-queue-trigger?tabs=python-v2%2Cin-process%2Cextensionv5&pivots=programming-language-javascript
