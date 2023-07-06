@@ -1,4 +1,4 @@
-import { Controller, Get, Header, Post, UploadedFile, UseInterceptors, Res, Query } from '@nestjs/common';
+import { Controller, Get, Header, Post, UploadedFile, UseInterceptors, Res, Query, Delete, Req } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { AzureStorageService } from './azure-storage.service';
 
@@ -15,8 +15,22 @@ export class AzureStorageController {
 
     @Get()
     @Header('Content-Type','image/webp')
-    async readImage(@Res() res,@Query('filename') filename){
+    async ReadFile(@Res() res,@Query('filename') filename){
         const file = await this.storageService.ReadFile(filename);
         return file.pipe(res);
+    }
+
+    @Get('/download')
+    @Header('Content-Type','image/webp')
+    @Header('Content-Disposition', 'attachment; filename=test.png')
+    async DownloadFile(@Res() res,@Query('filename') filename){
+        const file = await this.storageService.ReadFile(filename);
+        return file.pipe(res);
+    }
+
+    @Delete()
+    async DeleteFile(@Req() req){
+        await this.storageService.DeleteFile(req.body.filename);
+        return "deleted";
     }
 }

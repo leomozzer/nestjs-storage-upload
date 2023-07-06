@@ -24,4 +24,9 @@ export class AzureStorageService {
         var blobDownloaded = await blobClient.download();
         return blobDownloaded.readableStreamBody;
     }
+
+    async DeleteFile(filename: string){
+        const blobClient = this.getBlobClient(filename);
+        await blobClient.deleteIfExists()
+    }
 }
