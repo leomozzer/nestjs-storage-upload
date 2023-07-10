@@ -7,7 +7,7 @@ export class AzureStorageController {
     constructor(private readonly storageService: AzureStorageService){}
 
     @Post()
-    @UseInterceptors(FileInterceptor('myfile'))
+    @UseInterceptors(FileInterceptor('file'))
     async upload(@UploadedFile() file: Express.Multer.File): Promise<string>{
         await this.storageService.UploadFile(file);
         return "uploaded";
