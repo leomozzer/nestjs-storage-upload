@@ -29,6 +29,26 @@ This repository will be used as base to start a new terraform project or even us
       └──📜variables.tf
 ```
 
+## API
+
+- `/azure-queue`
+  - GET
+    - Read the queue
+    - Option items `/azure-queue?number=100`. Gets 100 messages in the queue
+
+## Azure Function
+
+```json
+//local.settings.json
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "AzureWebJobsStorage": ""
+  }
+}
+```
+
 ## [Workflows](workflows)
 
 Set or GitHub Actions Workflows to be used when handling with Terraform deployment
