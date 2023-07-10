@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@azure/storage-blob": "^12.14.0",
+    "@azure/storage-queue": "^12.13.0",
     "@nestjs/common": "^8.0.0",
     "@nestjs/config": "^3.0.0",
     "@nestjs/core": "^8.0.0",
