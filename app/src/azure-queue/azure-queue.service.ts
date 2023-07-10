@@ -22,10 +22,12 @@ export class AzureQueueService {
         }
     }
 
-    async ReadQueue(queue: string){
+    async ReadQueue(queue: string, number: string | undefined){
         try {
             const queueClient = this.ConnectOnQueue().getQueueClient(queue)
-            const listMessages = await queueClient.peekMessages();
+            const listMessages = await queueClient.peekMessages({
+                numberOfMessages: number === undefined ? 10 : Number(number)
+            });
             return listMessages.peekedMessageItems
         } catch (error) {
             return error
