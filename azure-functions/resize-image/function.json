@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "name": "myQueueItem",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "image-processing",
+      "connection": ""
+    }
+  ],
+  "scriptFile": "../dist/resize-image/index.js"
+}
