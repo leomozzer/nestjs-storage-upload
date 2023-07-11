@@ -15,7 +15,7 @@ export class AzureQueueService {
     async SendMessage(queue: string, message: string){
         try {
             const queueClient = this.ConnectOnQueue().getQueueClient(queue)
-            const sendMessage = await queueClient.sendMessage(message)
+            const sendMessage = await queueClient.sendMessage(btoa(message))
             return `Item ${sendMessage.messageId} was added`
         } catch (error) {
             return error
