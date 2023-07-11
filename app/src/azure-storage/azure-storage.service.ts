@@ -11,7 +11,7 @@ export class AzureStorageService {
         try {
             const blobClientService = BlobServiceClient.fromConnectionString(process.env.AZURE_STORAGE_CONNECTION_STRING);
             const containerClient = blobClientService.getContainerClient(process.env.AZURE_STORAGE_CONTAINER);
-            const blobClient = containerClient.getBlockBlobClient(imageName);
+            const blobClient = containerClient.getBlockBlobClient(`original/${imageName}`);
             return blobClient;   
         } catch (error) {
             return error;
