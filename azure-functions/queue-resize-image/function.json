@@ -8,5 +8,5 @@
       "connection": ""
     }
   ],
-  "scriptFile": "../dist/resize-image/index.js"
+  "scriptFile": "../dist/queue-resize-image/index.js"
 }
